@@ -1,12 +1,11 @@
 package com.example.moodtrackerfragments;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,7 +15,14 @@ import android.view.ViewGroup;
 public class NeutralFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // השורה הזו מחברת בין קובץ ה-Java לקובץ ה-XML של הפרגמנט
-        return inflater.inflate(R.layout.fragment_neutral, container, false);
+        View view = inflater.inflate(R.layout.fragment_neutral, container, false);
+        TextView moodText = view.findViewById(R.id.mood_text);
+
+        if (getArguments() != null) {
+            String userName = getArguments().getString("user_name");
+            moodText.setText(userName + " מרגיש ניטרלי");
+        }
+
+        return view;
     }
 }
