@@ -9,11 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SadFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SadFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -22,7 +17,11 @@ public class SadFragment extends Fragment {
 
         if (getArguments() != null) {
             String userName = getArguments().getString("user_name");
-            moodText.setText(userName + " מרגיש מצוין");
+            if(userName != null && !userName.isEmpty()){
+                moodText.setText(userName + " מרגיש עצוב");
+            } else {
+                moodText.setText("אתה מרגיש עצוב");
+            }
         }
 
         return view;

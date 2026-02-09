@@ -15,7 +15,11 @@ public class HappyFragment extends Fragment {
 
         if (getArguments() != null) {
             String userName = getArguments().getString("user_name");
-            moodText.setText(userName + " מרגיש מצוין");
+            if(userName != null && !userName.isEmpty()){
+                moodText.setText(userName + " מרגיש מצוין");
+            } else {
+                moodText.setText("אתה מרגיש מצוין");
+            }
         }
 
         return view;

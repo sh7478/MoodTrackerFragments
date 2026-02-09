@@ -7,11 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NeutralFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class NeutralFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -20,7 +15,11 @@ public class NeutralFragment extends Fragment {
 
         if (getArguments() != null) {
             String userName = getArguments().getString("user_name");
-            moodText.setText(userName + " מרגיש ניטרלי");
+            if(userName != null && !userName.isEmpty()){
+                moodText.setText(userName + " מרגיש ניטרלי");
+            } else {
+                moodText.setText("אתה מרגיש ניטרלי");
+            }
         }
 
         return view;
