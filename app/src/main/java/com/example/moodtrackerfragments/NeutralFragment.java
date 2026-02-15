@@ -14,7 +14,7 @@ public class NeutralFragment extends Fragment {
         TextView moodText = view.findViewById(R.id.mood_text);
 
         if (getArguments() != null) {
-            String userName = getArguments().getString("user_name");
+            String userName = getArguments().getString("userName");
             if(userName != null && !userName.isEmpty()){
                 moodText.setText(userName + " מרגיש ניטרלי");
             } else {

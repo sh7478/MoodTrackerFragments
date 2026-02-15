@@ -10,8 +10,10 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Enter a name"
         android:inputType="textMultiLine" />
 
     <!-- התפריט התחתון -->
@@ -19,7 +21,8 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="604dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/name"
         android:layout_above="@id/bottom_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
