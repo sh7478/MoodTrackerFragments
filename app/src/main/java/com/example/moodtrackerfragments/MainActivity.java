@@ -1,5 +1,6 @@
 package com.example.moodtrackerfragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.EditText;
 
@@ -24,10 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
             if (id == R.id.nav_happy) {
                 selectedFragment = new HappyFragment();
+                bottomNav.setBackgroundColor(Color.YELLOW);
             } else if (id == R.id.nav_neutral) {
                 selectedFragment = new NeutralFragment();
+                bottomNav.setBackgroundColor(Color.GREEN);
             } else if (id == R.id.nav_sad) {
                 selectedFragment = new SadFragment();
+                bottomNav.setBackgroundColor(Color.BLUE);
             }
 
             if (selectedFragment != null) {
